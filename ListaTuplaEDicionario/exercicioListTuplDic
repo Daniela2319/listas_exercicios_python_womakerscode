@@ -1,0 +1,61 @@
+lista_frutas = [] #declaração da lista
+fruta = input('Digite sua fruta: ')
+lista_frutas.append(fruta)
+lista_frutas.append('maça')
+lista_frutas.append('uva')
+lista_frutas.append('laranja')
+lista_frutas.append('mexerica')
+print(lista_frutas)
+
+#declaração da tupla é que utiliza parentes e não se modifica as lista.
+tupla = ('maça', 'banana', 'uva', 'morango')
+print(tupla)
+
+#dicionario
+dicionario = {}
+dicionario ['maca'] = 'é uma fruta'
+dicionario ['carro'] = 'é um veiculo'
+dicionario ['gato'] = 'é uma animal'
+print(dicionario)
+
+#exercicio 1
+lista_crime = [
+    'Telefonou para vitima? ',
+    'esteve no local do crime? ',
+    'mora perto da vitima? ',
+    'devia para a vitima? ',
+    'ja trabalhou com a vitima? '
+]
+for pergunta in lista_crime:
+    resposta = input(f"{pergunta} (responda com 'sim' ou 'não'): ")
+    print(resposta)
+
+#exercicio 2
+# Perguntas sobre o crime
+perguntas = [
+    "Você telefonou para a vítima?",
+    "Você esteve no local do crime?",
+    "Você mora perto da vítima?",
+    "Você já trabalhou com a vítima?"
+]
+
+# Respostas do usuário
+respostas = []
+for pergunta in perguntas:
+    resposta = input(f"{pergunta} (responda com 'sim' ou 'não'): ")
+    respostas.append(resposta.lower())
+
+# Avaliação das respostas
+suspeito = respostas.count("sim")
+
+# Classificação
+if suspeito == 2:
+    print("Você é considerado(a) suspeito(a)!")
+elif suspeito == 3 or suspeito == 4:
+    print("Você é considerado(a) cúmplice!")
+elif suspeito == 5:
+    print("Você é considerado(a) o(a) assassino(a)!")
+else:
+    print("Você está livre de suspeitas.")
+
+

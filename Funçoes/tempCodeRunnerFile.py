@@ -1,0 +1,1 @@
+print(maximo(6, 5) == 6)
