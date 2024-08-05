@@ -5,8 +5,8 @@ def titulo(txt):
 
 
 """ 1. Faça um Programa que peça dois números, realize as principais operações soma, subtração, multiplicação, divisão"""
-titulo("Exercício 01")
 
+titulo("Exercício 01")
 numeroA = int(input("Digite um número: "))
 numeroB = int(input("Digite outro número: "))
 operacao = input("Digite uma operação (+, -, * ou /): ")
@@ -31,6 +31,7 @@ match operacao:
         print("Operação inválida. Por favor, escolha +, -, * ou /.")
 
 """2. Peça ao usuário para informar o ano de nascimento. Em seguida, calcule e imprima a idade atual."""
+
 titulo("Exercício 02")
 anoNascimento = int(input("Digite o ano de nascimento: "))
 anoAtual = 2024
@@ -39,6 +40,7 @@ idadeAtual = anoAtual - anoNascimento
 print(f"A idade atual é: {idadeAtual} anos.")
 
 """3. Faça um Programa que peça a quantidade de quilômetros, transforme em metros, centímetros e milímetros."""
+
 titulo("Exercício 03")
 quantKm = int(input("Digite quantidade de Km: "))
 
@@ -51,6 +53,7 @@ print(f"O centimetro é: {centimetro} cm.")
 print(f"O milimetro é: {milimetro} mm.")
 
 """4. Receba do usuário a quantidade de litros de combustível consumidos e a distância percorrida. Calcule e imprima o consumo médio em km/l."""
+
 titulo("Exercício 04")
 quantLitros = int(input("Digite quantidade de litros de combustível: "))
 disPercorrida = int(input("Digite a distância percorrida (em km): "))
@@ -67,7 +70,7 @@ print(f"Custo do consumo médio: {custoConsumo:.2f}")
  ● Renda entre R$ 3.751,06 e R$ 4.664,68: alíquota de 22,5%;
  ● Renda acima de R$ 4.664,68: alíquota máxima de 27,5%."""
 
-salario_bruto = float(input("Digite o salário bruto: R$ "))
+salario_bruto = 3564.56
 if salario_bruto <= 1903.98:
     aliquota = 0.0
 elif salario_bruto <= 2826.65:
@@ -82,7 +85,6 @@ else:
 desconto_ir = salario_bruto * aliquota
 salario_liquido = salario_bruto - desconto_ir
 
-# Exibir o resultado
 print(f"Salário Bruto: R$ {salario_bruto:.2f}")
 print(
     f"Desconto de Imposto de Renda (alíquota de {aliquota * 100}%): R$ {desconto_ir:.2f}"
@@ -149,6 +151,5 @@ idade = 40
 cidade = "Curitiba"
 profissacao = "Programado"
 
-print(
-    f"Olá meu nome é {nome}, tenho {idade} anos, eu moro em {cidade} estou trabalhando na area da {profissacao}"
-)
+mensagem = f"Olá meu nome é {nome}, tenho {idade} anos, eu moro em {cidade} estou trabalhando na area da {profissacao}"
+print(mensagem)
