@@ -1,0 +1,1 @@
+usuario1.obter_informacoes()

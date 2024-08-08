@@ -22,4 +22,6 @@ Exercícios Orientação a Objetos com Python
  Para modelar o sistema, utilize obrigatoriamente os conceitos de classe,
  herança, propriedade, encapsulamento e classe abstrata.
 
+ autor daniela
+
 """
