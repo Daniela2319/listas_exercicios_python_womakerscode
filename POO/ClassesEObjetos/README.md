@@ -2,45 +2,66 @@
 
 ```mermaid
 classDiagram
-class Usuario {
-  - String nome
-  - String telefone
-  - String nacionalidade
-}
+    class Pessoa {
+        -nome: str
+        -telefone: str
+        -nacionalidade: str
+        +obter_informacoes(): str
+    }
 
-    class Livro {
-        - int id
-        - String titulo
-        - String editora
-        - List~String~ generos
-        - List~String~ autores
-        - int maxRenovacoes
-        - int renovacoes
+    class Usuario {
+        +obter_informacoes(): str
+    }
+    Pessoa <|-- Usuario
+
+    class Item {
+        -id: int
+        -emprestado: bool
+        +emprestar(): void
+        +devolver(): void
     }
 
     class Exemplar {
-        - int id
-        - boolean emprestado
+    }
+    Item <|-- Exemplar
+
+    class Livro {
+        -id: int
+        -titulo: str
+        -editora: str
+        -generos: list~str~
+        -autores: list~str~
+        -maxRenovacoes: int
+        -renovacoes: int
+        -exemplares: list~Exemplar~
+        +adicionar_exemplar(exemplar: Exemplar): void
+        +remover_exemplar(exemplar: Exemplar): void
     }
 
     class Emprestimo {
-        - Usuario usuario
-        - Exemplar exemplar
-        - Date dataEmprestimo
-        - Date dataDevolucao
-        - String estado
+        -usuario: Usuario
+        -exemplar: Exemplar
+        -data_emprestimo: datetime
+        -data_devolucao: datetime
+        -estado: str
+        +devolver(): void
     }
 
     class Biblioteca {
-        - List~Usuario~ usuarios
-        - List~Livro~ livros
-        - List~Emprestimo~ emprestimos
+        -usuarios: list~Usuario~
+        -livros: list~Livro~
+        -emprestimos: list~Emprestimo~
+        +adicionar_usuario(usuario: Usuario): void
+        +adicionar_livro(livro: Livro): void
+        +registrar_emprestimo(emprestimo: Emprestimo): void
+        +devolver_emprestimo(emprestimo: Emprestimo): void
     }
 
-    Usuario --> Emprestimo : faz
-    Livro --> Exemplar : possui
-    Exemplar --> Emprestimo : emprestado
-    Biblioteca --> Usuario : contém
-    Biblioteca --> Livro : contém
-    Biblioteca --> Emprestimo : registra
+    Usuario --> Emprestimo : "realiza"
+    Emprestimo --> Exemplar : "refere-se a"
+    Exemplar --> Livro : "pertence a"
+    Biblioteca --> Usuario : "gerencia"
+    Biblioteca --> Livro : "gerencia"
+    Biblioteca --> Emprestimo : "gerencia"
+
 ```
