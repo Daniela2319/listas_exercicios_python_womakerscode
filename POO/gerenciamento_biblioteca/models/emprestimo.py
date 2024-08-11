@@ -6,7 +6,7 @@ class Emprestimo:
         self.usuario = usuario
         self.exemplar = exemplar
         self.data_emprestimo = datetime.now()
-        self.data_devolucao = None
+        self.data_devolucao = datetime.now().hour
         self.estado = "emprestado"
 
     def devolver(self):

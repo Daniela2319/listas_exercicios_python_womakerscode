@@ -17,10 +17,12 @@ biblioteca = Biblioteca()
 # Adicionar usuários
 titulo("Adicionar usuário")
 usuario1 = Usuario("Daniela", "9999-9999", "Brasileira")
-usuario1.obter_informacoes()
 biblioteca.adicionar_usuario(usuario1)
 usuario2 = Usuario("Frank", "6666-6666", "EUA")
 biblioteca.adicionar_usuario(usuario2)
+usuario3 = Usuario("Valdemar", "9999-9999", "Chines")
+biblioteca.adicionar_usuario(usuario3)
+usuario1.obter_informacoes()
 
 # Adicionar livros e exemplares
 
@@ -34,22 +36,25 @@ livro2 = Livro(
     "Ciência Moderna",
     ["Educação"],
     ["Caíque Cardoso"],
-    3,
+    0,
 )
+
 
 exemplar1 = Exemplar(1)
 exemplar2 = Exemplar(2)
-exemplar3 = Exemplar(3)
+
+
 livro1.adicionar_exemplar(exemplar1)
-livro1.adicionar_exemplar(exemplar2)
+livro2.adicionar_exemplar(exemplar2)
 biblioteca.adicionar_livro(livro1)
 biblioteca.adicionar_livro(livro2)
+
 
 # Realizar empréstimos
 titulo("Realizar empréstimos")
 emprestimo1 = Emprestimo(usuario1, exemplar1)
 biblioteca.registrar_emprestimo(emprestimo1)
-emprestimo2 = Emprestimo(usuario2, exemplar3)
+emprestimo2 = Emprestimo(usuario2, exemplar2)
 biblioteca.registrar_emprestimo(emprestimo2)
 
 print(
